@@ -18,7 +18,7 @@
             background-image: linear-gradient(to left, #c3e9ef, #f3dfcb);
         }
         .text{
-            height: 500vh;
+            height: 250vh;
             width: 100%;
         }
         .vid{
@@ -125,12 +125,7 @@
             transition:all 1s ease;
             position:absolute;
         }
-        .circle .cir .point,
-        .circle .cir1 .point1,
-        .circle .cir3 .point4,
-        .circle .ccir3 .point4,
-        .circle .ccir2 .point2,
-        .circle .cir2 .point2{
+        .circle .cir .point{
             height: 6px;
             width: 6px;
             left: 100%;
@@ -141,19 +136,6 @@
         }
         
         .circle .ccir1 .cpoint1{
-            height: 6px;
-            width: 6px;
-            transform: translate(-1px, -1px);
-            position:absolute;
-            left: -3.5px;
-            border-radius: 50%;
-            background-color: black;
-        }
-        .circle .cir2 .cpoint2,
-        .circle .cir3 .cpoint4,
-        .circle .ccir3 .cpoint4,
-        .circle .ccir2 .cpoint2,
-        .circle .cir1 .cpoint1{
             height: 6px;
             width: 6px;
             transform: translate(-1px, -1px);
@@ -448,6 +430,7 @@
             $(".tt1").css("color","black")
         });
         $(".p1").click(function(){
+            $(".mm").val("");
             var a=1,b=Math.pow(3, .5);
             let h = Math.pow(a*a+b*b, .5);
             var de = Math.asin(a/h)*180/Math.PI;
@@ -469,6 +452,7 @@
 
         });
         $(".p2").click(function(){
+            $(".mm").val("");
             var a=1,b=Math.pow(3, .5);
             let h = Math.pow(a*a+b*b, .5);
             var de = Math.asin(a/h)*180/Math.PI;
@@ -491,6 +475,7 @@
                 }
         });
         $(".p3").click(function(){
+            $(".mm").val("");
             var b=1,a=Math.pow(3, .5);
             let h = Math.pow(a*a+b*b, .5);
             var de = Math.asin(a/h)*180/Math.PI;
@@ -510,6 +495,7 @@
                 }
         });
         $(".p4").click(function(){
+            $(".mm").val("");
             var b=1,a=Math.pow(3, .5);
             let h = Math.pow(a*a+b*b, .5);
             var de = Math.asin(a/h)*180/Math.PI;
@@ -532,11 +518,12 @@
                 }
         });
         $(".p5").click(function(){
+            $(".mm").val("");
             var a=1,b=Math.pow(3, .5);
             let h = Math.pow(a*a+b*b, .5);
             var de = Math.asin(a/h)*180/Math.PI;
             a = -a;
-            $(".cir").css("transform",`rotateZ(${de}deg)`);
+            $(".cir").css("transform",`rotateZ(-${de+300}deg)`);
             de=300+de;
                 if(!$("#radius").val()){$("#radius").val("1");
                 $("#angle").val(`${de.toFixed(0)}`);
@@ -553,10 +540,11 @@
 
         });
         $(".p6").click(function(){
+            $(".mm").val("");
             var a=1,b=Math.pow(3, .5);
             let h = Math.pow(a*a+b*b, .5);
             var de = Math.asin(a/h)*180/Math.PI;
-            $(".cir").css("transform",`rotateZ(${de+180}deg)`);
+            $(".cir").css("transform",`rotateZ(-${-de+180}deg)`);
                 b = -b;
             de = 180-de;
             if(!$("#radius").val()){
@@ -574,10 +562,11 @@
                 }
         });
         $(".p7").click(function(){
+            $(".mm").val("");
             var b=1,a=Math.pow(3, .5);
             let h = Math.pow(a*a+b*b, .5);
             var de = Math.asin(a/h)*180/Math.PI;
-            $(".cir").css("transform",`rotateZ(${de}deg)`);
+            $(".cir").css("transform",`rotateZ(-${240+de}deg)`);
                 a = -a;
             de+= 240;
             if(!$("#radius").val()){
@@ -595,10 +584,11 @@
             }
         });
         $(".p8").click(function(){
+            $(".mm").val("");
             var b=1,a=Math.pow(3, .5);
             let h = Math.pow(a*a+b*b, .5);
             var de = Math.asin(a/h)*180/Math.PI;
-            $(".cir").css("transform",`rotateZ(${de+180}deg)`);
+            $(".cir").css("transform",`rotateZ(-${-de+180}deg)`);
                 b=-b;
             de = 180-de;
             if(!$("#radius").val()){
@@ -620,7 +610,6 @@
             let h = Math.pow(a*a+b*b, .5);
             var de = Math.asin(a/h)*180/Math.PI;
             $(".cir").css("transform",`rotateZ(-${de}deg)`);
-            
             if(!$("#radius").val()){
                 $("#radius").val("1");
                 $("#angle").val(`${de.toFixed(0)}`);
@@ -639,7 +628,7 @@
             var b=1,a=1;
             let h = Math.pow(a*a+b*b, .5);
             var de = Math.asin(a/h)*180/Math.PI;
-            $(".cir").css("transform",`rotateZ(${-de+180}deg)`);
+            $(".cir").css("transform",`rotateZ(-${de+180}deg)`);
             a = -a;
             b = -b;
             de = 180+de;
@@ -658,10 +647,11 @@
             }
         });
         $(".p11").click(function(){
+            $(".mm").val("");
             var b=1,a=1;
             let h = Math.pow(a*a+b*b, .5);
             var de = Math.asin(a/h)*180/Math.PI;
-            $(".cir").css("transform",`rotateZ(${de}deg)`);
+            $(".cir").css("transform",`rotateZ(-${de+270}deg)`);
             b = -b;
             de+=270;
             if(!$("#radius").val()){
@@ -679,10 +669,11 @@
             }
         });
         $(".p12").click(function(){
+            $(".mm").val("");
             var b=1,a=1;
             let h = Math.pow(a*a+b*b, .5);
             var de = Math.asin(a/h)*180/Math.PI;
-            $(".cir").css("transform",`rotateZ(${de+180}deg)`);
+            $(".cir").css("transform",`rotateZ(-${de+90}deg)`);
             a = -a;
             de = 90+de;
             if(!$("#radius").val()){
@@ -734,7 +725,6 @@
             }
         });
         $(".btnre").click(function(){
-            console.log($(".ra").is(":checked"));
             if($(".ra").is(":checked")){
                 if(!$("#radius").val() || !$("#angle").val){
                     $(".error").empty();
@@ -750,15 +740,16 @@
                     $(".error").empty();
                     if(b>0)$(".cir").css("transform",`rotateZ(-${b}deg)`);
                     else $(".cir").css("transform",`rotateZ(${-b}deg)`);
+                        b = $("#angle").val();
                         b = b * Math.PI /180;
-                        var yy = a*(Math.round((Math.sin(b))*1000)/1000), xx = a*(Math.round((Math.cos(b))*1000)/1000);
+                        var yy = a*((Math.sin(b).toFixed(3))), xx = a*((Math.cos(b).toFixed(3)));
                         $(".o1").val(xx);
                         $(".o2").val(yy);
-                        $(".o3").val(Math.round((Math.sin(b))*1000)/1000);
-                        $(".o4").val(Math.round((Math.cos(b))*1000)/1000);
-                        if(Math.tan(b) < 100)$(".o5").val(Math.round((Math.tan(b))*1000)/1000);
-                        else $(".o5").val("Infinite");
-                        $(".o6").val(`x^2 + y^2 = ${a*a}`);
+                        var sin = (Math.sin(b)), cos = (Math.cos(b));
+                        $(".o3").val(sin.toFixed(3));
+                        $(".o4").val(cos.toFixed(3));
+                        $(".o5").val((sin/cos).toFixed(3));
+                        $(".o6").val(`x^2 + y^2 = ${(a*a).toFixed(3)}`);
                     }
                 }
             }else{
@@ -773,17 +764,21 @@
                     $(".error").empty();
                     $(".error").append("Please enter values in correct format");
                     }else{
-
-                        var radius = Math.pow(a*a+b*b, .5), angle = Math.asin(b/(Math.pow(a*a+b*b, .5)))*180/(Math.PI);
-                        if(angle>0) $(".cir").css("transform",`rotateZ(-${angle}deg)`);
-                        else $(".cir").css("transform",`rotateZ(${-angle}deg)`);
+                        a = $("#xc").val();
+                        b = $("#yc").val();
+                        var radius = Math.pow(a*a+b*b, .5), angle = Math.asin(b/radius)*180/(Math.PI);
+                        if(a<0 && b>0) angle = 180-angle;
+                        else if(a<0 && b<0) angle = -angle +180;
+                        else if(a>0 && b<0) angle = +angle+360;
+                        $(".cir").css("transform",`rotateZ(-${angle}deg)`);
                         radius = radius.toFixed(3);
+                        $(".o2").val(Math.round(angle));
+                        angle = angle*Math.PI/180;
                         $(".o1").val(radius);
-                        $(".o2").val((angle).toFixed(4));
-                        $(".o3").val(Math.sin(angle*(Math.PI)/180).toFixed(3));
-                        $(".o4").val(Math.cos(angle*(Math.PI)/180).toFixed(3));
-                        $(".o5").val(Math.tan(angle*(Math.PI)/180).toFixed(3));
-                        $(".o6").val(`x^2 + y^2 = ${(radius*radius).toFixed(2)}`);
+                        $(".o3").val(Math.sin(angle).toFixed(3));
+                        $(".o4").val(Math.cos(angle).toFixed(3));
+                        $(".o5").val(Math.tan(angle).toFixed(3));
+                        $(".o6").val(`x^2 + y^2 = ${(radius*radius).toFixed(3)}`);
                     }
                 }
             }
